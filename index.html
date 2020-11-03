@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Informasi data terbaru mengenai kasus Virus Corona di Indonesia">
+    <meta name="keywords" content="Data Corona, Informasi Data Corona">
+    <title>Dashboard - Covid-19 Tracker</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/c3.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/Chart.min.css">
+</head>
+<body>
+
+    <div class="page">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="http://localhost/covid">Covid-19 Tracker</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active" style="border-right: 1px solid #ebecec;">
+                            <a class="nav-link" href="http://localhost/covid/ ?>"><i class="fas fa-home"></i> Dashboard <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active" style="border-right: 1px solid #ebecec;">
+                            <a class="nav-link" href="http://localhost/covid/hotline.html"><i class="fas fa-phone"></i> Hotline Corona</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container" style="margin-top:60px;margin-bottom:15px">
+            <div class="text-center">
+                <h1>CORONA TRACKER</h1>
+                <p style="margin-top:20px;font-size:19px">Coronavirus Indonesia Live Data</p>
+            </div>
+            <!-- row 1 open -->
+            <div class="row card-row" style="margin-top:60px">
+                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+                    <div class="card card-banner text-white bg-primary mb-3 shadow">
+                        <div class="card-body homecard">
+                            <p>TOTAL POSITIF</p>
+                            <h3>---</h3>
+                            <p>ORANG</p>
+                        </div>
+                        <i class="fal fa-bed fa-4x"></i>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+                    <div class="card card-banner text-white bg-warning mb-3 shadow">
+                        <div class="card-body homecard">
+                            <p>TOTAL DALAM PERAWATAN</p>
+                            <h3>---</h3>
+                            <p>ORANG</p>
+                        </div>
+                        <i class="fal fa-search-minus fa-4x"></i>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+                    <div class="card card-banner text-white bg-success mb-3 shadow">
+                        <div class="card-body homecard">
+                            <p>TOTAL SEMBUH</p>
+                            <h3>---</h3>
+                            <p>ORANG</p>
+                        </div>
+                        <i class="fal fa-heart fa-4x"></i>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+                    <div class="card card-banner text-white bg-danger mb-3 shadow">
+                        <div class="card-body homecard">
+                            <p>TOTAL MENINGGAL</p>
+                            <h3>---</h3>
+                            <p>ORANG</p>
+                        </div>
+                        <i class="fal fa-heart-broken fa-4x"></i>
+                    </div>
+                </div>
+                <!-- <div class="col text-center">
+                    <p style="margin-top:16px;font-size:13px">Sumber data : Kementerian Kesehatan & JHU. Update terakhir : 27 Maret 2020 03:35:09 WIB</p>
+                </div> -->
+            </div>
+            <!-- row 1 end -->
+            <div class="row statistik" style="margin-top:6px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xl-16">
+                    <div class="card noborder shadow">
+                        <div class="card-header bg-white">
+                            <h4 class="card-title notosans"><strong>Statistik Covid19 30 Hari Terakhir</strong></h4>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row global" style="margin-top:20px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xl-16">
+                    <div class="card noborder shadow">
+                        <div class="card-header bg-white">
+                            <h4 class="card-title notosans"><strong>Data Covid19 per Provinsi</strong></h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover global-table">
+                                    <thead>
+                                        <tr>
+                                            <th>NO.</th>
+                                            <th>Provinsi</th>
+                                            <th>Positif</th>
+                                            <th>Sembuh</th>
+                                            <th>Meninggal</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="5">Memuat..</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container text-center">
+                <h4 class="notosans">Covid-19 Tracker</h4>
+                <p style="font-size:13px;margin-bottom:0">Made with <i class="fa fa-heart"></i> by IF-42-07</p>
+            </div>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/c3.min.js"></script>
+    <script type="text/javascript" src="assets/js/Chart.bundle.min.js"></script>
+    <script type="text/javascript" src="assets/js/d3.min.js"></script>
+    <script type="text/javascript" src="assets/js/chart.js"></script>
+    <script type="text/javascript">
+
+        var charts = {labels: [], datas: []};
+
+        $.get('https://indonesia-covid-19.mathdro.id/api', function(response) {
+            let active = response.jumlahKasus - response.sembuh - response.meninggal
+            $($('.card-body.homecard')[0]).find('h3').text(response.jumlahKasus);
+            $($('.card-body.homecard')[1]).find('h3').text(response.perawatan);
+            $($('.card-body.homecard')[2]).find('h3').text(response.sembuh);
+            $($('.card-body.homecard')[3]).find('h3').text(response.meninggal);
+        });
+
+        $.get('https://indonesia-covid-19.mathdro.id/api/provinsi', function(response) {
+            $('.global-table').find('tbody').html('');
+            for (let i = 0; i < response.data.length - 1; i++) {
+                $('.global-table').find('tbody').append('<tr>' +
+                        '<td>' + (i + 1) + '</td>' +
+                        '<td>' + response.data[i].provinsi + '</td>' +
+                        '<td>' + response.data[i].kasusPosi + '</td>' +
+                        '<td>' + response.data[i].kasusSemb + '</td>' +
+                        '<td>' + response.data[i].kasusMeni + '</td>' +
+                    '</tr>')
+            }
+        });
+        
+        $.get('https://indonesia-covid-19.mathdro.id/api/harian', function(response) {
+            let i = response.data.length - 31;
+            const monthNames = ["Jan", "Feb", "Mart", "Apr", "Mei", "Jun",
+                "Jul", "Agu", "Sep", "Okt", "Nov", "Des"
+            ];
+            for (let j = i; j < response.data.length - 1; j++) {
+                let d = new Date(response.data[j].tanggal);
+                let date = d.getDate() + ' ' + monthNames[d.getMonth()];
+                charts['labels'].push(date);
+                charts['datas'].push(response.data[j].jumlahKasusKumulatif);
+            }
+            drawChart(charts['labels'], charts['datas']);
+        });
+
+    </script>
+</body>
+</html>
