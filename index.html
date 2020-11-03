@@ -167,11 +167,11 @@
         });
         
         $.get('https://indonesia-covid-19.mathdro.id/api/harian', function(response) {
-            let i = response.data.length - 31;
+            let i = response.data.length - 30;
             const monthNames = ["Jan", "Feb", "Mart", "Apr", "Mei", "Jun",
                 "Jul", "Agu", "Sep", "Okt", "Nov", "Des"
             ];
-            for (let j = i; j < response.data.length - 1; j++) {
+            for (let j = i; j < response.data.length; j++) {
                 let d = new Date(response.data[j].tanggal);
                 let date = d.getDate() + ' ' + monthNames[d.getMonth()];
                 charts['labels'].push(date);
